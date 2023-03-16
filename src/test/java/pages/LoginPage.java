@@ -4,12 +4,12 @@ import base.BaseClass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.ConfigsReader;
 
 
 // Note: This is just a template for LoginPage where we store everything related to Login page here, in this class.
 //  In Page Object Model (Design Pattern), we organize our code by pages. Each web page will have their own class.
 public class LoginPage extends BaseClass {
-
     // LoginPage using PageFactory
     //@FindBy() == driver.findElement()
 
@@ -33,11 +33,14 @@ public class LoginPage extends BaseClass {
     }
 
     public void loginToWebsite(String user, String pswd) {
-//        sendText(username, ConfigsReader.getProperties(user));
-//        sendText(password, ConfigsReader.getProperties(pswd));
         sendText(username, user);
         sendText(password, pswd);
         clickButWaitForClickability(loginBtn);
     }
 
+    public void loginToWebsiteViaConfigs(String user, String pswd) {
+        sendText(username, ConfigsReader.getProperties(user));
+        sendText(password, ConfigsReader.getProperties(pswd));
+        clickButWaitForClickability(loginBtn);
+    }
 }

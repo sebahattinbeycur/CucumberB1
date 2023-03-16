@@ -28,7 +28,6 @@ public class CommonMethods extends PageInitializer {
 
     /**
      * Method will switch focus to next window/tab based on the window title/name
-     *
      * @param windowTitle String
      */
     public static void switchToWindow(String windowTitle) {
