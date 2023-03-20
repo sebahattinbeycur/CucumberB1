@@ -5,6 +5,7 @@ pages\LoginPage.class
 pages\PIMPage.class
 pages\DashboardPage.class
 utils\CommonMethods.class
+steps\NegativeLoginTestSteps.class
 steps\Login2Steps.class
 steps\Hooks.class
 base\PageInitializer.class

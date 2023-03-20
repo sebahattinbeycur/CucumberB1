@@ -3,9 +3,14 @@ package utils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.bouncycastle.est.LimitedSource;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 // We need to import Apache POI libraries for this to work.
 public class ExcelUtility {
@@ -63,5 +68,24 @@ public class ExcelUtility {
         }
 
         return data;
+    }
+
+    // Map version. Reading data from Excel using Map, instead of inner loop (2d array).
+
+    public static List<Map<String, String>> readFromExcelMap(String filePath, String sheetName) {
+        getFilePath(filePath);
+        getSheet(sheetName);
+
+        List<Map<String, String>> mapList = new ArrayList<>();
+
+        Map<String, String> map;
+        for (int i = 1; i < rowCount(); i++) {
+            map = new LinkedHashMap<>();
+            for (int j = 0; j < colsCount(); j++) {
+                map.put(getCell(0, j), getCell(i, j));
+            }
+            mapList.add(map);
+        }
+        return mapList;
     }
 }

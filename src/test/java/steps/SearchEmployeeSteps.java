@@ -37,10 +37,11 @@ public class SearchEmployeeSteps extends BaseClass {
     }
 
     @Given("user enters an existing employee name {string} in the employee name-search-field")
-    public void user_enters_an_existing_employee_name_in_the_employee_name_search_field(String empNeme) {
+    public void user_enters_an_existing_employee_name_in_the_employee_name_search_field(String empName) {
         wait(1);
-        employeeListPage.searchEmployeeByName(empNeme);
+        employeeListPage.searchEmployeeByName(empName);
     }
+
     // This is hard-coded version of step definitions(without parameter)
     @And("user enters an existing employee id in the id-search-field")
     public void search_employee_by_id() {

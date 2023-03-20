@@ -12,7 +12,7 @@ public class Login2Steps extends BaseClass {
     @When("admin user logs in with valid credentials")
     public void admin_user_logs_in_with_valid_credentials() {
         //1st way
-        loginPage.loginToWebsiteViaConfigs("username", "password");
+        loginPage.loginToWebsiteViaConfigs("username", "Password");
 
         //2nd way
 //        sendText(loginPage.username, ConfigsReader.getProperties("username"));
@@ -56,18 +56,4 @@ public class Login2Steps extends BaseClass {
         //String actualMessage = dashboardPage.welcome.getText();
         Assert.assertEquals("User login is NOT successful",expectedMessage, dashboardPage.welcome.getText());
     }
-//    @When("Admin user enters login credentials")
-//    public void admin_user_enters_login_credentials(io.cucumber.datatable.DataTable dataTable) {
-//        List<Map<String, String>> mapList = dataTable.asMaps();
-//        for (Map<String, String> loginCredentials : mapList){
-//            if (loginCredentials.get("Username") == null){
-//
-//            }
-//        }
-//    }
-//    @Then("login negative tests are successfully")
-//    public void login_negative_tests_are_successfully() {
-//
-//    }
-
 }
