@@ -45,6 +45,7 @@ public class LoginSteps extends BaseClass {
     @Then("login error message for empty password is displayed")
     public void loginErrorMessageForEmptyPasswordIsDisplayed() {
         Assert.assertEquals("Login Error Message is Incorrect", "Password cannot be empty", loginPage.loginErrorMessage.getText());
+//        Assert.fail();       // Failing this for return failed.txt, please fix after you are done testing.
         tearDown();
     }
 }

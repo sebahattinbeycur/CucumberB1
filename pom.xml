@@ -50,12 +50,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-<!--                    <properties>-->
-<!--                        <property>-->
-<!--                            <name>listener</name>-->
-<!--                            <value>runners.Listener</value>-->
-<!--                        </property>-->
-<!--                    </properties>-->
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>runners.Listener</value>
+                        </property>
+                    </properties>
                     <includes>
                         <!-- '**/*' <== Select all files in current project -->
                         <include>**/*TestRunner.java</include>

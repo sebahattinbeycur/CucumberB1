@@ -11,7 +11,7 @@ Feature: Main Menu
   Scenario: Dashboard menu view for Admin User
     When user logs in with valid admin credentials
     Then user should see dashboard menu displayed
-      | Admin123       |
+      | Admin       |
       | PIM         |
       | Leave       |
       | Time        |

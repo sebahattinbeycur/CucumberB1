@@ -13,9 +13,9 @@ public class Hooks {
     }
     @After
     public void quitBrowser(Scenario scenario) {
-        if (scenario.isFailed()) {
-            CommonMethods.takeScreenshot("FailTests/" + scenario.getName());
-        }
+//        if (scenario.isFailed()) {
+//            CommonMethods.takeScreenshot("FailTests/" + scenario.getName());
+//        }
         BaseClass.tearDown();
     }
 }
